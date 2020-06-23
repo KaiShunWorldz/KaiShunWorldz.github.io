@@ -1,7 +1,7 @@
-#Git#
+# Git #
 
 ##Task: Manage files in github repository
-###Prerequisites:### 
+### Prerequisites: ### 
 Make sure you have an account with github
 Configure your use of git
 
@@ -11,7 +11,7 @@ $ git config --global user.emal “your@email.com”
 ```
 This will be used to track who made which changes.
 
-##Initialize a repository##
+## Initialize a repository ##
 
 Every time you create a project you need to initialize a repository
 
@@ -20,7 +20,8 @@ $ git init
 $ git remote -v
 $ git remote set-url origin <repository-url>
 ```
-##Check on the status of your repository##
+## Check on the status of your repository ##
+
 ```
 $ git status
 ```
@@ -28,7 +29,9 @@ Shows the commit status of all the files in the repository.
 
 ##Add files into staging##
 
+```
 $ git add <files>
+```
 
 This will add the files to the staging area so the can be committed with the next commit. So not all changed files will be committed but only the staged ones.
 
@@ -47,7 +50,7 @@ Go back to a previous commit
 ```$ git checkout <hash from log>
 ```
 
-##Branches##
+## Branches ##
 ```
 $ git branch <new branch name>
 $ git branch 
@@ -62,6 +65,6 @@ When 2FA is enabled the git commands need a password token instead of a password
 $ git config --global credential.helper 'cache --timeout=7200’
 ```
 
-##References##
+## References ##
 
 :link: [Learn Git in 15 minutes](https://www.youtube.com/watch?v=USjZcfj8yxE)
