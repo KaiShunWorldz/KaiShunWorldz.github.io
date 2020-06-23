@@ -1,7 +1,8 @@
-![GIT](./img/OpCard.png)
+![OpCard](./img/OpCard.png)
+
 # Git #
 
-##Task: Manage files in github repository
+## Task: Manage files in github repository ##
 ### Prerequisites: ### 
 Make sure you have an account with github
 Configure your use of git
