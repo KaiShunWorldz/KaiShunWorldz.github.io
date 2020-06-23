@@ -27,7 +27,7 @@ $ git status
 ```
 Shows the commit status of all the files in the repository.
 
-##Add files into staging##
+## Add files into staging ##
 
 ```
 $ git add <files>
@@ -35,17 +35,17 @@ $ git add <files>
 
 This will add the files to the staging area so the can be committed with the next commit. So not all changed files will be committed but only the staged ones.
 
-Committing to the branch
+## Committing to the branch ##
 ```
 $ git commit -a “Some explaining text”
 ```
 
-Show what has been committed 
+## Show what has been committed ##
 ```
 $ git log
 ```
 
-Go back to a previous commit
+## Go back to a previous commit ##
 
 ```$ git checkout <hash from log>
 ```
@@ -58,7 +58,7 @@ $ git checkout <branch-name>
 $ git push --set-upstream origin <branch-name>
 $ git merge <branch-name>
 ```
-##Two Factor Authenticationv
+## Two Factor Authentication ##
 When 2FA is enabled the git commands need a password token instead of a password. To avoid being asked one every time, the password can be cached for a set time period. For example two hours.
 
 ```
