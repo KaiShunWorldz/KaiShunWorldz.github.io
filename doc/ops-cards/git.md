@@ -47,7 +47,8 @@ $ git log
 
 ## Go back to a previous commit ##
 
-```$ git checkout <hash from log>
+```
+$ git checkout <hash from log>
 ```
 
 ## Branches ##
