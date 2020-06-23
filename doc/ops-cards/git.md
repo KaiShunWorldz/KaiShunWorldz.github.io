@@ -1,7 +1,5 @@
 ![Git](./img/OpCard-Git.png)
 
-# Git #
-
 ## Task: Manage files in github repository ##
 ### Prerequisites: ### 
 Make sure you have an account with github
