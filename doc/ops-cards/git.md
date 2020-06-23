@@ -1,3 +1,4 @@
+![GIT](./img/OpCard.png)
 # Git #
 
 ##Task: Manage files in github repository
