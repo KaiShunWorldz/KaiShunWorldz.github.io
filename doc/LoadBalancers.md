@@ -24,3 +24,15 @@ As an alternative to Ingress, you can also use a service of the LoadBalancer typ
 ### In the Balance, It’s Ingress
 
 Currently, however, Ingress is the load-balancing method of choice. Since it is essentially internal to Kubernetes, operating as a pod-based controller, it has relatively unencumbered access to Kubernetes functionality (unlike external load balancers, some of which may not have good access at the pod level). The configurable rules contained in an Ingress resource allow very detailed and highly granular load balancing, which can be customized to suit both the functional requirements of the application and the conditions under which it operates.
+
+## Google Cloud (taken from Google)
+
+Google Kubernetes Engine (GKE) offers integrated support for two types of Cloud Load Balancing for a publicly accessible application:
+
+When you specify type:LoadBalancer in the resource manifest, GKE creates a Service of type LoadBalancer. GKE makes appropriate Google Cloud API calls to create either an external network load balancer or an internal TCP/UDP load balancer. GKE creates an internal TCP/UDP load balancer when you add the cloud.google.com/load-balancer-type: "Internal" annotation; otherwise, GKE creates an external network load balancer.
+
+Although you can use either of these types of load balancers for HTTP(S) traffic, they operate in OSI layers 3/4 and are not aware of HTTP connections or individual HTTP requests and responses. Another important characteristic is that the requests are not proxied to the destination.
+Note: When GKE creates an external network load balancer, it does not configure any load balancer health check for the target pool. (External network load balancers using target pools do not require health checks.) When GKE creates an internal TCP/UDP load balancer, it creates a health check for the load balancer's backend service based on the readiness probe settings of the workload referenced by the GKE Service. For more information, see to Internal TCP/UDP Load Balancing.
+When you specify type:Ingress in the resource manifest, you instruct GKE to create an Ingress resource. By including annotations and supporting workloads and Services, you can create a custom Ingress controller. Otherwise, GKE makes appropriate Google Cloud API calls to create an external HTTP(S) load balancer. The load balancer's URL map's host rules and path matchers reference one or more backend services, where each backend service corresponds to a GKE Service of type NodePort, as referenced in the Ingress. The backends for each backend service are either instance groups or network endpoint groups (NEGs). NEGs are created when you configure container-native load balancing as part of the configuration for your Ingress. For each backend service, GKE creates a Google Cloud health check, based on the readiness probe settings of the workload referenced by the corresponding GKE Service.
+
+If you are exposing an HTTP(S) service hosted on GKE, HTTP(S) load balancing is the recommended method for load balancing.
