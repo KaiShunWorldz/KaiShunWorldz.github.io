@@ -1,8 +1,8 @@
 # Load Balancing
 
-## Services as Dispatchers
+## Services as Dispatchers ( taken from Rancher )
 
-That’s how Kubernetes handles containers and pods at the management level. But as we mentioned above, it also abstracts functionally related/identical pods into services, and it is at the service level that external clients and other elements of the application interact with pods. Services have IP addresses (used internally by Kubernetes) which are relatively stable. When a program element needs to make use of the functions abstracted by the service, it makes a request to the service, rather than an individual pod. The service then acts as a dispatcher, assigning a pod to handle the request.
+When a program element needs to make use of the functions abstracted by the service, it makes a request to the service, rather than an individual pod. The service then acts as a dispatcher, assigning a pod to handle the request.
 
 ## Dispatching and Load Distribution
 
