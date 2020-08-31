@@ -34,7 +34,11 @@ Google Kubernetes Engine (GKE) offers integrated support for two types of Cloud 
 Although you can use either of these types of load balancers for HTTP(S) traffic, they operate in OSI layers 3/4 and are not aware of HTTP connections or individual HTTP requests and responses. Another important characteristic is that the requests are not proxied to the destination.
 
 ```
-Note: When GKE creates an external network load balancer, it does not configure any load balancer health check for the target pool. (External network load balancers using target pools do not require health checks.) When GKE creates an internal TCP/UDP load balancer, it creates a health check for the load balancer's backend service based on the readiness probe settings of the workload referenced by the GKE Service. For more information, see to Internal TCP/UDP Load Balancing.
+Note: When GKE creates an external network load balancer, it does not configure any load balancer health check for 
+the target pool. (External network load balancers using target pools do not require health checks.) When GKE creates 
+an internal TCP/UDP load balancer, it creates a health check for the load balancer's backend service based on the 
+readiness probe settings of the workload referenced by the GKE Service. For more information, see to Internal 
+TCP/UDP Load Balancing.
 ```
 
 - When you specify type:*Ingress* in the resource manifest, you instruct GKE to create an Ingress resource. By including annotations and supporting workloads and Services, you can create a custom Ingress controller. Otherwise, GKE makes appropriate Google Cloud API calls to create an external HTTP(S) load balancer. The load balancer's URL map's host rules and path matchers reference one or more backend services, where each backend service corresponds to a GKE Service of type NodePort, as referenced in the Ingress. The backends for each backend service are either instance groups or network endpoint groups (NEGs). NEGs are created when you configure container-native load balancing as part of the configuration for your Ingress. For each backend service, GKE creates a Google Cloud health check, based on the readiness probe settings of the workload referenced by the corresponding GKE Service.
