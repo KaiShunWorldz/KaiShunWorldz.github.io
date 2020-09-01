@@ -1,4 +1,5 @@
 - Ansible is software that automates software provisioning, configuration management, and application deployment
+- [Ansible Container](https://docs.ansible.com/ansible-container/)
 - ArchiMate is an open and independent enterprise architecture modeling language to support the description, analysis and visualization of architecture within and across business domains in an unambiguous way
 - Apache Cassandra is a free and open-source distributed NoSQL database management system designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure
 - A content delivery network (CDN) is a system of distributed servers (network) that deliver pages and other Web content to a user, based on the geographic locations of the user, the origin of the webpage and the content delivery server.
@@ -33,7 +34,20 @@ Higher uptime due to faster restore time
 Point-in-time recovery
 - phpMyAdmin is a free and open source administration tool for MySQL and MariaDB. As a portable web application written primarily in PHP, it has become one of the most popular MySQL administration tools, especially for web hosting services.
 - Puppet is an open-source software configuration management tool. It runs on many Unix-like systems as well as on Microsoft Windows, and includes its own declarative language to describe system configuration.
+- [rectic](https://restic.net/#quickstart)
 - Salt is a Python-based open-source configuration management software and remote execution engine. Supporting the "Infrastructure as Code" approach to deployment and cloud management, it competes primarily with Hey Puppet, Chef, and Ansible. 
+
+- [Terraform](https://www.terraform.io/) : Use Infrastructure as Code to provision and manage any cloud, infrastructure, or service
 - Terraform is an infrastructure as code software by HashiCorp. It allows users to define a datacenter infrastructure in a high-level configuration language, from which it can create an execution plan to build the infrastructure such as OpenStack.
+
+- [tmux](https://arcolinux.com/everthing-you-need-to-know-about-tmux-introduction/)
+- [The Tao of Tmux](https://leanpub.com/the-tao-of-tmux/read)
+
+- [Travis](https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci-using-github)
 - The Open Group Architecture Framework (TOGAF) is a framework for enterprise architecture that provides an approach for designing, planning, implementing, and governing an enterprise information technology
 - Ubuntu Core is a tiny, transactional version of Ubuntu for IoT devices and large container deployments. It runs a new breed of super-secure, remotely upgradeable Linux app packages known as snaps ‐ and it’s trusted by leading IoT players, from chipset vendors to device makers and system integrators. Automatic updates ensure that critical security issues are addressed in the field, even if a device is unattended.
+- [Ubuntu LXD](https://ubuntu.com/blog/lxd-clusters-a-primer)
+
+
+
+
