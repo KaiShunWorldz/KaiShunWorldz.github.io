@@ -1,11 +1,11 @@
-- Ansible is software that automates software provisioning, configuration management, and application deployment
+- [Ansible](https://docs.ansible.com) is software that automates software provisioning, configuration management, and application deployment
 - [Ansible Container](https://docs.ansible.com/ansible-container/)
 - ArchiMate is an open and independent enterprise architecture modeling language to support the description, analysis and visualization of architecture within and across business domains in an unambiguous way
 - Apache Cassandra is a free and open-source distributed NoSQL database management system designed to handle large amounts of data across many commodity servers, providing high availability with no single point of failure
 - A content delivery network (CDN) is a system of distributed servers (network) that deliver pages and other Web content to a user, based on the geographic locations of the user, the origin of the webpage and the content delivery server.
 - Amazon DynamoDB is a fully managed proprietary NoSQL database service that is offered by Amazon.com as part of the Amazon Web Services portfolio.
 - Chef is both the name of a company and the name of a configuration management tool written in Ruby and Erlang. It uses a pure-Ruby, domain-specific language (DSL) for writing system configuration "recipes". Chef is used to streamline the task of configuring and maintaining a company's servers, and can integrate with cloud-based platforms such as Internap, Amazon EC2, Google Cloud Platform, Oracle Cloud, OpenStack, SoftLayer, Microsoft Azure and Rackspace to automatically provision and configure new machines.
-- CockroachDB is a cloud-native SQL database for building global, scalable cloud services that survive disasters .
+- [CockroachDB](https://www.cockroachlabs.com/) is a cloud-native SQL database for building global, scalable cloud services that survive disasters .
 - Docker is a computer program that performs operating-system-level virtualization also known as containerization.
 - Drupal is a free and open source content-management framework written in PHP and distributed under the GNU General Public License.
 - Docker Swarm is a tool used to cluster and orchestrate Docker containers. It allows an IT administrator to manage a cluster of host systems as a resource pool.
