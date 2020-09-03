@@ -12,7 +12,7 @@ The following load balancing mechanisms (or methods) are supported in nginx:
 
 Default load balancing configuration
 The simplest configuration for load balancing with nginx may look like the following:
-```JSON
+```
 http {
     upstream AssetService {
         server localhost:8005;
