@@ -82,9 +82,9 @@ When the weight parameter is specified for a server, the weight is accounted as 
 
 ```NGINX
     upstream myapp1 {
-        server srv1.example.com weight=3;
-        server srv2.example.com;
-        server srv3.example.com;
+        server os-asset-01 weight=3;
+        server os-asset-02;
+        server os-asset-03;
     }
 ```
 
