@@ -1,14 +1,14 @@
 # Load Balancing
 
 ## NGINX as Load Balancer for Opensim Robust Services
-It is possible to use nginx as a very efficient HTTP load balancer to distribute traffic to several application servers and to improve performance, scalability and reliability of web applications with nginx.
+It is possible to use nginx as a very efficient HTTP load balancer to distribute traffic to several application servers and to improve performance, scalability and reliability of web applications with nginx.Since Robust services talk to each other using HTTP requests, we should be able to use NGINX as a load balancer.
 
 ### Load balancing methods
 The following load balancing mechanisms (or methods) are supported in nginx:
 
-- round-robin — requests to the application servers are distributed in a round-robin fashion,
-- least-connected — next request is assigned to the server with the least number of active connections,
-- ip-hash — a hash-function is used to determine what server should be selected for the next request (based on the client’s IP address).
+- *round-robin* — requests to the application servers are distributed in a round-robin fashion,
+- *least-connected* — next request is assigned to the server with the least number of active connections,
+- *ip-hash* — a hash-function is used to determine what server should be selected for the next request (based on the client’s IP address).
 
 Default load balancing configuration
 The simplest configuration for load balancing with nginx may look like the following:
@@ -29,16 +29,16 @@ http {
     }
 }
 ```
-In the example above, there are 3 instances of the same application running on localhost. When the load balancing method is not specifically configured, it defaults to round-robin. All requests are proxied to the server group AssetService, and nginx applies HTTP load balancing to distribute the requests.
+In the example above, there are 3 instances of the same application running on localhost listening on different ports. When the load balancing method is not specifically configured, it defaults to *round-robin*. All requests are proxied to the server group AssetService, and nginx applies HTTP load balancing to distribute the requests.
 
 ### Least connected load balancing
-Another load balancing discipline is least-connected. Least-connected allows controlling the load on application instances more fairly in a situation when some of the requests take longer to complete.
+Another load balancing discipline is *least-connected*. Least-connected allows controlling the load on application instances more fairly in a situation when some of the requests take longer to complete.
 
 With the least-connected load balancing, nginx will try not to overload a busy application server with excessive requests, distributing the new requests to a less busy server instead.
 
 Least-connected load balancing in nginx is activated when the least_conn directive is used as part of the server group configuration:
 ```NGINX
-    upstream AssetServic {
+    upstream AssetService {
         least_conn;
         server localhost:8005;
         server localhost:8007;
@@ -47,7 +47,7 @@ Least-connected load balancing in nginx is activated when the least_conn directi
 ```    
    
 ### Session persistence
-Please note that with round-robin or least-connected load balancing, each subsequent client’s request can be potentially distributed to a different server. There is no guarantee that the same client will be always directed to the same server.
+Please note that with *round-robin* or *least-connected* load balancing, each subsequent client’s request can be potentially distributed to a different server. There is no guarantee that the same client will be always directed to the same server.
 
 If there is the need to tie a client to a particular application server — in other words, make the client’s session “sticky” or “persistent” in terms of always trying to select a particular server — the ip-hash load balancing mechanism can be used.
 
@@ -63,7 +63,6 @@ upstream AssetService {
         server os-asset-apac:8005;
 }
 ```
-
 Least-connected load balancing in nginx is activated when the least_conn directive is used as part of the server group configuration:
 
 ### Health checks
@@ -81,14 +80,14 @@ With the round-robin in particular it also means a more or less equal distributi
 When the weight parameter is specified for a server, the weight is accounted as part of the load balancing decision.
 
 ```NGINX
-    upstream myapp1 {
+    upstream AssetService {
         server os-asset-01 weight=3;
         server os-asset-02;
         server os-asset-03;
     }
 ```
 
-With this configuration, every 5 new requests will be distributed across the application instances as the following: 3 requests will be directed to srv1, one request will go to srv2, and another one — to srv3.
+With this configuration, every 5 new requests will be distributed across the application instances as the following: 3 requests will be directed to os-asset-01, one request will go to os-asset-02, and another one — to os-asset-03.
 
 It is similarly possible to use weights with the least-connected and ip-hash load balancing in the recent versions of nginx.
 
