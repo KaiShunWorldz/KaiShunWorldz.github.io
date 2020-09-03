@@ -1,6 +1,6 @@
 # Load Balancing
 
-## NGINX as Load Balancer for Opensim Robust Services
+## NGINX as Load Balancer for Opensim Robust Services ( adapted from NGINX.com )
 It is possible to use nginx as a very efficient HTTP load balancer to distribute traffic to several application servers and to improve performance, scalability and reliability of web applications with nginx.Since Robust services talk to each other using HTTP requests, we should be able to use NGINX as a load balancer.
 
 ### Load balancing methods
