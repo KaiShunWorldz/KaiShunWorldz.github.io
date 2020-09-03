@@ -1,5 +1,35 @@
 # Load Balancing
 
+## NGINX as Load Balancer
+It is possible to use nginx as a very efficient HTTP load balancer to distribute traffic to several application servers and to improve performance, scalability and reliability of web applications with nginx.
+
+### Load balancing methods
+The following load balancing mechanisms (or methods) are supported in nginx:
+
+- round-robin — requests to the application servers are distributed in a round-robin fashion,
+- least-connected — next request is assigned to the server with the least number of active connections,
+- ip-hash — a hash-function is used to determine what server should be selected for the next request (based on the client’s IP address).
+
+Default load balancing configuration
+The simplest configuration for load balancing with nginx may look like the following:
+```JSON
+http {
+    upstream AssetService {
+        server localhost:8005;
+        server localhost:8007;
+        server localhost:8009;
+    }
+
+    server {
+        listen 8003;
+
+        location / {
+            proxy_pass http://AssetService;
+        }
+    }
+}
+```
+
 ## Services as Dispatchers ( taken from Rancher )
 
 When a program element needs to make use of the functions abstracted by the service, it makes a request to the service, rather than an individual pod. The service then acts as a dispatcher, assigning a pod to handle the request.
