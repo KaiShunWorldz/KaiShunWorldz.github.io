@@ -10,8 +10,8 @@ The following load balancing mechanisms (or methods) are supported in nginx:
 - *least-connected* — next request is assigned to the server with the least number of active connections,
 - *ip-hash* — a hash-function is used to determine what server should be selected for the next request (based on the client’s IP address).
 
-Default load balancing configuration
-The simplest configuration for load balancing with nginx may look like the following:
+### Default load balancing configuration
+The simplest configuration for load balancing a Robust service with nginx may look like the following:
 ```NGINX
 http {
     upstream AssetService {
